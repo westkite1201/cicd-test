@@ -1,24 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nextjs-app
-  labels:
-    app: nextjs-app
+  name: my-nextjs-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nextjs-app
+      app: my-nextjs-app
   template:
     metadata:
       labels:
-        app: nextjs-app
+        app: my-nextjs-app
     spec:
       containers:
-        - name: nextjs-container
-          image: harbor.mycompany.com/nextjs/nextjs-app:latest
-          ports:
-            - containerPort: 3000
-          env:
-            - name: NODE_ENV
-              value: "production"
+      - name: my-nextjs-app
+        # 이 부분을 GitHub Actions가 자동으로 변경해 줄 것입니다.
+        image: docker.dev.westkite.dev/my-apps/nextjs-app:initial
+        ports:
+        - containerPort: 3000
