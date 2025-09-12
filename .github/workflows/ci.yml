@@ -42,7 +42,7 @@ jobs:
     - name: Checkout Helm Chart Repository
       uses: actions/checkout@v4
       with:
-        repository: 'https://github.com/westkite1201/cicd-test-app-manifests' # 예: your-github-id/my-helm-charts
+        repository: 'westkite1201/cicd-test-app-manifests' # ✅ 올바른 형식
         token: ${{ secrets.GH_PAT }}
         path: 'helm-charts-repo' # 임시 폴더에 클론
 
